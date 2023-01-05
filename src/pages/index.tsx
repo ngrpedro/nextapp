@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 interface User {
-  id: number;
+  _id: number;
   name: string;
 }
 
@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     fetch("/api/users")
       .then((res) => res.json())
-      .then((data) => setUsers(data.data));
+      .then((data) => setUsers(data));
   }, []);
 
   return (
@@ -23,7 +23,7 @@ export default function Home() {
 
       <ul>
         {users?.map((user) => (
-          <li key={user.id}>{user.name}</li>
+          <li key={user._id}>{user.name}</li>
         ))}
       </ul>
     </>

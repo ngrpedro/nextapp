@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { deflate } from "zlib";
+import { connectToDataBase } from "../../../utils/mongodb";
 
-export default function handlerUsers(
+export default async function handlerUsers(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -10,14 +10,11 @@ export default function handlerUsers(
 
     switch (method) {
       case "GET":
-        res.status(200).json({
-          data: [
-            { id: 1, name: "Pedro" },
-            { id: 2, name: "Paula" },
-            { id: 3, name: "Maiara" },
-            { id: 4, name: "Beatriz" },
-          ],
-        });
+        const { db } = await connectToDataBase();
+        const data = await db.collection("users").find().toArray();
+
+        res.status(200).json(data);
+
         break;
       default:
         res.setHeader("Allow", ["GET"]);
