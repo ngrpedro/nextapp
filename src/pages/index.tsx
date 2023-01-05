@@ -1,22 +1,14 @@
 import { Inter } from "@next/font/google";
-import { useEffect, useState } from "react";
+import { GetServerSideProps } from "next";
+import { User } from "../utils/interfaces";
 
 const inter = Inter({ subsets: ["latin"] });
 
-interface User {
-  _id: number;
-  name: string;
-}
+type Props = {
+  users: User[];
+};
 
-export default function Home() {
-  const [users, setUsers] = useState<User[]>([]);
-
-  useEffect(() => {
-    fetch("/api/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, []);
-
+const Home = ({ users }: Props) => {
   return (
     <>
       <h1>Hello my firts Next.js App</h1>
@@ -28,4 +20,17 @@ export default function Home() {
       </ul>
     </>
   );
-}
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch("http://localhost:3000/api/users");
+  const users: User[] = await res.json();
+
+  return {
+    props: {
+      users,
+    },
+  };
+};
+
+export default Home;
