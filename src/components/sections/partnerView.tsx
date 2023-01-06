@@ -4,12 +4,14 @@ import PartnerCard from "./../partnerCard";
 const partners = [
   { id: 1, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
   {
-    id: 2,
-    name: "Instituição Caminhos Abertos",
-    spec: "Acolhimento",
-    city: "Rio preto - SP",
-  },
-  { id: 3, name: "Renata Morais", spec: "médica", city: "Araçatuba - SP" },
+      id: 2,
+      name: "Instituição Caminhos Abertos",
+      spec: "Acolhimento",
+      city: "Rio preto - SP",
+    },
+    { id: 3, name: "Renata Morais", spec: "médica", city: "Araçatuba - SP" },
+    { id: 4, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
+    { id: 5, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
 ];
 
 const PartnerView = () => {
@@ -40,9 +42,9 @@ const PartnerView = () => {
         </div>
       </div>
 
-      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-        {partners.map((pertner) => (
-          <PartnerCard />
+      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {partners.map((partner) => (
+          <PartnerCard key={partner.id}/>
         ))}
       </div>
     </div>
