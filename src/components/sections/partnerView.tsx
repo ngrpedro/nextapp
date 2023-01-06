@@ -1,4 +1,16 @@
 import React from "react";
+import PartnerCard from "./../partnerCard";
+
+const partners = [
+  { id: 1, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
+  {
+    id: 2,
+    name: "Instituição Caminhos Abertos",
+    spec: "Acolhimento",
+    city: "Rio preto - SP",
+  },
+  { id: 3, name: "Renata Morais", spec: "médica", city: "Araçatuba - SP" },
+];
 
 const PartnerView = () => {
   return (
@@ -26,6 +38,12 @@ const PartnerView = () => {
             <option value="FR">Pscólogos</option>
           </select>
         </div>
+      </div>
+
+      <div className="my-10">
+        {partners.map((pertner) => (
+          <PartnerCard />   
+        ))}
       </div>
     </div>
   );
