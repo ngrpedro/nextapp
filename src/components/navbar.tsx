@@ -5,7 +5,9 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="py-4 px-6 mb-4 flex items-center justify-between border border-gray-500 rounded-lg shadow-md">
-      Logo
+      <span className="text-2xl font-semibold whitespace-nowrap">
+        RubikCube
+      </span>
       <ul className="flex items-center justify-center gap-6">
         <li className="font-semibold hover:text-gray-200 transition-colors">
           <Link href="/">Home</Link>

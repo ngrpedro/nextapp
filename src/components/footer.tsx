@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="p-4 bg-transparent rounded-lg shadow md:px-6 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
-            Logo
+          RubikCube
           </span>
           <ul className="flex flex-wrap items-center gap-6 mb-6 text-sm text-gray-300 sm:mb-0">
             <li>
