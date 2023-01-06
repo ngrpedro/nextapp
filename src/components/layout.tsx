@@ -8,7 +8,7 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div>
+    <div className="max-w-6xl m-auto">
       <Navbar />
       {children}
       <Footer />
