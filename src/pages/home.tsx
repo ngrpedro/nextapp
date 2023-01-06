@@ -11,7 +11,7 @@ type Props = {
 const Home = ({ users }: Props) => {
   return (
     <>
-      <h1>Hello my firts Next.js App</h1>
+      <h1>Hello my first Next.js App</h1>
 
       <ul>
         {users?.map((user) => (

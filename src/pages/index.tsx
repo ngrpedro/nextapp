@@ -5,7 +5,7 @@ import Layout from "./../components/layout";
 
 const index = () => {
   return (
-    <div className="bg-gradient-to-r from-[#021d5a] to-[#2f1800] text-white pt-4">
+    <div className="text-gray-800 pt-4 overflow-hidden">
       <Head>
         <title>Home</title>
       </Head>

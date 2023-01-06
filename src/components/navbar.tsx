@@ -1,14 +1,17 @@
 import Link from "next/link";
-import { CaretDown } from "phosphor-react";
+import { CaretDown, Hamburger, List } from "phosphor-react";
 import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="py-4 px-6 mb-4 flex items-center justify-between border border-gray-500 rounded-lg shadow-md">
+    <div className="py-4 px-6 mb-4 flex items-center justify-between border-b border-gray-500">
       <span className="text-2xl font-semibold whitespace-nowrap">
         RubikCube
       </span>
-      <ul className="flex items-center justify-center gap-6">
+      <div className="block md:hidden cursor-pointer">
+        <List size={22} />
+      </div>
+      <ul className="items-center justify-center gap-6 hidden md:flex">
         <li className="font-semibold hover:text-gray-200 transition-colors">
           <Link href="/">Home</Link>
         </li>
