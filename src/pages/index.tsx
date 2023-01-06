@@ -4,11 +4,13 @@ import Layout from "./../components/layout";
 
 const index = () => {
   return (
-    <div className="bg-gradient-to-r from-[#021d5a] to-[#503b01] text-white pt-4">
+    <div className="bg-gradient-to-r from-[#021d5a] to-[#502a01] text-white pt-4">
       <Head>
         <title>Home</title>
       </Head>
-      <Layout>teste</Layout>
+      <Layout>
+        <div className="h-screen">teste</div>
+      </Layout>
     </div>
   );
 };
