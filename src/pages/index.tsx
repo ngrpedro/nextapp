@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import Hero from "../components/sections/hero";
+import PartnerView from "../components/sections/partnerView";
 import Layout from "./../components/layout";
 
 const index = () => {
@@ -11,6 +12,7 @@ const index = () => {
       </Head>
       <Layout>
         <Hero />
+        <PartnerView />
       </Layout>
     </div>
   );

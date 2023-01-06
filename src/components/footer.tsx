@@ -7,7 +7,7 @@ const Footer = () => {
       <footer className="p-4 bg-transparent md:px-6 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
-          RubikCube
+          EcoPlural
           </span>
           <ul className="flex flex-wrap items-center gap-6 mb-6 text-sm text-gray-800 sm:mb-0">
             <li>
@@ -34,7 +34,7 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-600 sm:mx-auto lg:my-8" />
         <span className="block text-sm text-gray-800 sm:text-center">
-          Pedro Soares . All Rights Reserved.
+           DispplayWeb . All Rights Reserved.
         </span>
       </footer>
     </>

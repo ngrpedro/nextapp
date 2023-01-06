@@ -3,7 +3,7 @@ import RubikCube from "../rubikCube/rubikCube";
 
 const Hero = () => {
   return (
-    <section className="h-screen relative">
+    <section className="relative">
       <div
         className="w-[25rem] h-[25rem] absolute right-[-10rem] -top-10 rounded-full 
         bg-gradient-to-r from-[#ff7bbc] to-[#9698ff] blur-[80px] -z-10"
