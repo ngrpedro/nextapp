@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { Partner } from "../../utils/interfaces";
 import PartnerCard from "./../partnerCard";
 
-const partners = [
+const partners: Partner[] = [
   { id: 1, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
   {
-      id: 2,
-      name: "Instituição Caminhos Abertos",
-      spec: "Acolhimento",
-      city: "Rio preto - SP",
-    },
-    { id: 3, name: "Renata Morais", spec: "médica", city: "Araçatuba - SP" },
-    { id: 4, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
-    { id: 5, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
+    id: 2,
+    name: "Instituição Caminhos Abertos",
+    spec: "Acolhimento",
+    city: "Rio preto - SP",
+  },
+  { id: 3, name: "Renata Morais", spec: "médica", city: "Araçatuba - SP" },
+  { id: 4, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
+  { id: 5, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
 ];
 
 const PartnerView = () => {
+  const [partner, setPartners] = useState(partners);
+
   return (
     <div className="my-10">
       <div className=" rounded p-4 space-y-5 bg-white">
@@ -24,7 +27,7 @@ const PartnerView = () => {
             className="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg 
             block w-full p-2.5"
           >
-            <option selected>Tipo de serviço</option>
+            <option defaultValue="choose">Tipo de serviço</option>
             <option value="US">Instituição de acolhimento</option>
             <option value="CA">Médicos</option>
             <option value="FR">Pscólogos</option>
@@ -34,7 +37,7 @@ const PartnerView = () => {
             className="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg 
             block w-full p-2.5"
           >
-            <option selected>Escolha pela cidade</option>
+            <option defaultValue="choose">Escolha pela cidade</option>
             <option value="US">Instituição de acolhimento</option>
             <option value="CA">Médicos</option>
             <option value="FR">Pscólogos</option>
@@ -43,9 +46,7 @@ const PartnerView = () => {
       </div>
 
       <div className="my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {partners.map((partner) => (
-          <PartnerCard key={partner.id}/>
-        ))}
+          <PartnerCard partners={partner} />
       </div>
     </div>
   );
