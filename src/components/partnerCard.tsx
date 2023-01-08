@@ -10,7 +10,7 @@ const PartnerCard = ({ partners }: Props) => {
   return (
     <>
       {partners.map((item) => (
-        <div key={item.id} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md px-6">
+        <div key={item.id} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md px-6 m-auto md:m-0">
           <div className="flex flex-col items-center pb-10">
             <div className="w-24 h-24 overflow-hidden bg-gray-100 rounded-full flex justify-center my-5">
               <svg

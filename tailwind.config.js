@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         asap: ["Asap", "sans-serif"],
+        roboto: ["Roboto Slab", "serif"],
       },
     },
   },
