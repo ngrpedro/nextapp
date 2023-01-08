@@ -23,10 +23,10 @@ const PartnerCard = ({ partners }: Props) => {
             <div className="flex flex-col items-start justify-start gap-1">
               <div className="flex items-start justify-between gap-1 w-full">
                 <h1 className="text-xl font-semibold text-gray-800">
-                  Pietro Ramos
+                  {item.name}
                 </h1>
                 <span className="rounded-md bg-red-300 border border-red-600 text-red-600 text-xs py-[0.3rem] px-4 block">
-                  Psicólogo
+                  {item.spec}
                 </span>
               </div>
               <div className="flex items-start justify-start gap-1 mt-2">
@@ -45,9 +45,10 @@ const PartnerCard = ({ partners }: Props) => {
                 enim ad minim veniam, quis nostrud
               </span>
               <label className="text-gray-700 font-semibold text-sm block">
-                Araçatuba - SP
+                {item.city}
               </label>
             </div>
+
             <div className="flex mt-4 space-x-3 md:mt-6">
               <Link
                 href="/"
