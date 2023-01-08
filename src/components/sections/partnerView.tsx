@@ -3,16 +3,41 @@ import { Partner } from "../../utils/interfaces";
 import PartnerCard from "./../partnerCard";
 
 const partners: Partner[] = [
-  { id: 1, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
+  {
+    id: 1,
+    name: "Pietro Ramos",
+    spec: "psico",
+    city: "Araçatuba - SP",
+    isInstitute: false,
+  },
   {
     id: 2,
     name: "Instituição Caminhos Abertos",
-    spec: "Acolhimento",
+    spec: "acolhimento",
     city: "Rio preto - SP",
+    isInstitute: true,
   },
-  { id: 3, name: "Renata Morais", spec: "médica", city: "Araçatuba - SP" },
-  { id: 4, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
-  { id: 5, name: "Pietro Ramos", spec: "psicológo", city: "Araçatuba - SP" },
+  {
+    id: 3,
+    name: "Renata Morais",
+    spec: "medico",
+    city: "Araçatuba - SP",
+    isInstitute: false,
+  },
+  {
+    id: 4,
+    name: "Clínica Amor e Saúde",
+    spec: "medico",
+    city: "Araçatuba - SP",
+    isInstitute: true,
+  },
+  {
+    id: 5,
+    name: "Marcos da Silva",
+    spec: "psico",
+    city: "Birigui - SP",
+    isInstitute: false,
+  },
 ];
 
 const PartnerView = () => {
@@ -46,7 +71,7 @@ const PartnerView = () => {
       </div>
 
       <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          <PartnerCard partners={partner} />
+        <PartnerCard partners={partner} />
       </div>
     </div>
   );

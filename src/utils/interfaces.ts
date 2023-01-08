@@ -8,4 +8,5 @@ export interface Partner {
   name: string;
   spec: string;
   city: string;
+  isInstitute: boolean;
 }
