@@ -9,36 +9,35 @@ type Props = {
 
 const PartnerCard = ({ partners }: Props) => {
   console.log(partners);
-  const [isInstituteTeste, setiIsInstituteTeste] = useState(true);
   return (
     <>
       {partners.map((item) => (
         <div
           key={item.id}
-          className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md px-6 m-auto md:m-0"
+          className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md m-auto md:m-0"
         >
-          <div className="flex flex-col py-4">
-            <div className="flex items-start justify-start gap-4">
-              <div className="w-20 h-20 overflow-hidden bg-gray-100 rounded-full flex items-center justify-center">
-                <User size={66} />
-              </div>
-              <div className="flex flex-col items-start justify-start gap-1">
-                <span className="rounded-md bg-red-300 border border-red-600 text-red-600 text-xs py-[0.3rem] px-4 block">
-                  Psicólogo
-                </span>
+          <div className="w-full h-44 bg-gray-400 flex items-center justify-center rounded-t-lg">
+            w-full x h-44
+          </div>
+          <div className="flex flex-col py-4 px-6">
+            <div className="flex flex-col items-start justify-start gap-1">
+              <div className="flex items-start justify-between gap-1 w-full">
                 <h1 className="text-xl font-semibold text-gray-800">
                   Pietro Ramos
                 </h1>
-
-                <div className="flex items-start justify-start gap-1 mt-2">
-                  <Star size={16} />
-                  <Star size={16} />
-                  <Star size={16} />
-                  <Star size={16} />
-                  <Star size={16} />
-                </div>
+                <span className="rounded-md bg-red-300 border border-red-600 text-red-600 text-xs py-[0.3rem] px-4 block">
+                  Psicólogo
+                </span>
+              </div>
+              <div className="flex items-start justify-start gap-1 mt-2">
+                <Star size={16} />
+                <Star size={16} />
+                <Star size={16} />
+                <Star size={16} />
+                <Star size={16} />
               </div>
             </div>
+
             <div className="mt-6 mb-3 space-y-3">
               <span className="text-sm text-gray-500 block">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
