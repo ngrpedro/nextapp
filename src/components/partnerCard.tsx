@@ -1,6 +1,7 @@
 import { Star, User } from "phosphor-react";
 import React, { useState } from "react";
 import { Partner } from "../utils/interfaces";
+import Link from "next/link";
 
 type Props = {
   partners: Partner[];
@@ -12,7 +13,6 @@ const PartnerCard = ({ partners }: Props) => {
   return (
     <>
       {partners.map((item) => (
-
         <div
           key={item.id}
           className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md px-6 m-auto md:m-0"
@@ -50,18 +50,16 @@ const PartnerCard = ({ partners }: Props) => {
               </label>
             </div>
             <div className="flex mt-4 space-x-3 md:mt-6">
-              <a
-                href="#"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-center 
-              text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 
-              focus:ring-4 focus:outline-none focus:ring-gray-200 "
+              <Link
+                href="/"
+                className="flex items-center justify-center px-4 py-2 text-sm font-medium text-center w-full bg-purple-900
+              text-gray-100 border border-gray-300 rounded-md hover:bg-purple-800 transition-all"
               >
                 Ver Perfil
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-        
       ))}
     </>
   );
