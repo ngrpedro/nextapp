@@ -1,5 +1,4 @@
 import React from "react";
-import RubikCube from "../rubikCube/rubikCube";
 
 const Hero = () => {
   return (

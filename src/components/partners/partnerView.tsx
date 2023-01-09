@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Partner } from "../../utils/interfaces";
-import PartnerCard from "./../partnerCard";
+import PartnerCard from "./partnerCard";
 
 type Props = {
   partners?: Partner[];

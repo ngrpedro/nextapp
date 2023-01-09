@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
-import Hero from "../../components/sections/hero";
-import PartnerView from "../../components/sections/partnerView";
+import Hero from "../../components/partners/PartnerHero";
+import PartnerView from "../../components/partners/partnerView";
 import { GetServerSideProps } from "next";
 import { Partner } from "../../utils/interfaces";
 

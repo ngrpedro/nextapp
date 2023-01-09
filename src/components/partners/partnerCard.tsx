@@ -1,6 +1,6 @@
 import { Star, User } from "phosphor-react";
 import React, { useState } from "react";
-import { Partner } from "../utils/interfaces";
+import { Partner } from "../../utils/interfaces";
 import Link from "next/link";
 
 type Props = {
