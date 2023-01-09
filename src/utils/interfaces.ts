@@ -4,9 +4,9 @@ export interface User {
 }
 
 export interface Partner {
-  id: number;
+  _id: number;
   name: string;
-  spec: string;
+  reception: string;
   city: string;
   isInstitute: boolean;
 }

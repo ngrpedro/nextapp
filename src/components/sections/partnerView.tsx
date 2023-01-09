@@ -2,45 +2,11 @@ import React, { useState } from "react";
 import { Partner } from "../../utils/interfaces";
 import PartnerCard from "./../partnerCard";
 
-const partners: Partner[] = [
-  {
-    id: 1,
-    name: "Pietro Ramos",
-    spec: "psicólogo",
-    city: "Araçatuba - SP",
-    isInstitute: false,
-  },
-  {
-    id: 2,
-    name: "Instituição Caminhos Abertos",
-    spec: "acolhimento",
-    city: "Rio preto - SP",
-    isInstitute: true,
-  },
-  {
-    id: 3,
-    name: "Renata Morais",
-    spec: "médico",
-    city: "Araçatuba - SP",
-    isInstitute: false,
-  },
-  {
-    id: 4,
-    name: "Clínica Amor e Saúde",
-    spec: "médico",
-    city: "Araçatuba - SP",
-    isInstitute: true,
-  },
-  {
-    id: 5,
-    name: "Marcos da Silva",
-    spec: "psicólogo",
-    city: "Birigui - SP",
-    isInstitute: false,
-  },
-];
+type Props = {
+  partners: Partner[];
+};
 
-const PartnerView = () => {
+const PartnerView = ({ partners }: Props) => {
   const [partner, setPartners] = useState(partners);
 
   return (

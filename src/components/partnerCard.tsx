@@ -11,9 +11,9 @@ const PartnerCard = ({ partners }: Props) => {
   console.log(partners);
   return (
     <>
-      {partners.map((item) => (
+      {partners?.map((item) => (
         <div
-          key={item.id}
+          key={item._id}
           className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md m-auto md:m-0"
         >
           <div className="w-full h-44 bg-gray-400 flex items-center justify-center rounded-t-lg">
@@ -29,20 +29,20 @@ const PartnerCard = ({ partners }: Props) => {
                 <span
                   className={`rounded-md border text-xs py-[0.3rem] px-4 block capitalize
                   ${
-                    item.spec === "psicólogo" &&
+                    item.reception === "psicólogo" &&
                     "bg-red-300 border-red-600 text-red-600"
                   }
                   ${
-                    item.spec === "médico" &&
+                    item.reception === "médico" &&
                     "bg-yellow-300 border-yellow-600 text-yellow-600"
                   }
                   ${
-                    item.spec === "acolhimento" &&
+                    item.reception === "acolhimento" &&
                     "bg-blue-300 border-blue-600 text-blue-600"
                   }
                   `}
                 >
-                  {item.spec}
+                  {item.reception}
                 </span>
               </div>
               <div className="flex items-start justify-start gap-1 mt-2">
