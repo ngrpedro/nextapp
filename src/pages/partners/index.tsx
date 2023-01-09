@@ -17,6 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       partners,
     },
+    revalidate: 20,
   };
 };
 
