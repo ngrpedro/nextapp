@@ -22,7 +22,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       partners,
     },
-    revalidate: 20,
   };
 };
 
