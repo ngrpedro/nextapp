@@ -22,16 +22,4 @@ const Home = ({ users }: Props) => {
     </div>
   );
 };
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch("http://localhost:3000/api/users");
-  const users: User[] = await res.json();
-
-  return {
-    props: {
-      users,
-    },
-  };
-};
-
 export default Home;
