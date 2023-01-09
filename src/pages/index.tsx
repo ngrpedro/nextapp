@@ -1,5 +1,7 @@
 import { Inter } from "@next/font/google";
 import { GetServerSideProps } from "next";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "phosphor-react";
 import { User } from "../utils/interfaces";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -10,15 +12,14 @@ type Props = {
 
 const Home = ({ users }: Props) => {
   return (
-    <>
-      <h1>Hello my first Next.js App</h1>
-
-      <ul>
-        {users?.map((user) => (
-          <li key={user._id}>{user.name}</li>
-        ))}
-      </ul>
-    </>
+    <div className="flex flex-col items-center justify-center gap-5 h-[30rem] ">
+      <h1 className="text-2xl font-semibold ">
+        Bem vinde ao Ecosistema Plural
+      </h1>
+      <Link href="/partners">
+        Ver nossos parceiros
+      </Link>
+    </div>
   );
 };
 
