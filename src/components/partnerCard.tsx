@@ -67,7 +67,7 @@ const PartnerCard = ({ partners }: Props) => {
 
             <div className="flex mt-4 space-x-3 md:mt-6">
               <Link
-                href="/"
+                href="/partner/[id]"
                 className="flex items-center justify-center px-4 py-2 text-sm font-medium text-center w-full bg-purple-900
               text-gray-100 border border-gray-300 rounded-md hover:bg-purple-800 transition-all"
               >

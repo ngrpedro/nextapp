@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import Hero from "../components/sections/hero";
-import PartnerView from "../components/sections/partnerView";
-import Layout from "./../components/layouts/layout";
+import Hero from "../../components/sections/hero";
+import PartnerView from "../../components/sections/partnerView";
+import Layout from "../../components/layouts/layout";
 
 const index = () => {
   return (
@@ -10,10 +10,8 @@ const index = () => {
       <Head>
         <title>Home</title>
       </Head>
-      <Layout>
-        <Hero />
-        <PartnerView />
-      </Layout>
+      <Hero />
+      <PartnerView />
     </div>
   );
 };

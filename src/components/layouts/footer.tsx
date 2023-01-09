@@ -4,9 +4,9 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer className="p-4 bg-transparent md:px-6 md:py-8">
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap">
+      <footer className="py-4 bg-transparent md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between px-6">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap block pb-6 sm:pb-0">
           EcoPlural
           </span>
           <ul className="flex flex-wrap items-center gap-6 mb-6 text-sm text-gray-800 sm:mb-0">
