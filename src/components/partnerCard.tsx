@@ -25,7 +25,23 @@ const PartnerCard = ({ partners }: Props) => {
                 <h1 className="text-xl font-semibold text-gray-800">
                   {item.name}
                 </h1>
-                <span className="rounded-md bg-red-300 border border-red-600 text-red-600 text-xs py-[0.3rem] px-4 block">
+
+                <span
+                  className={`rounded-md border text-xs py-[0.3rem] px-4 block capitalize
+                  ${
+                    item.spec === "psicólogo" &&
+                    "bg-red-300 border-red-600 text-red-600"
+                  }
+                  ${
+                    item.spec === "médico" &&
+                    "bg-yellow-300 border-yellow-600 text-yellow-600"
+                  }
+                  ${
+                    item.spec === "acolhimento" &&
+                    "bg-blue-300 border-blue-600 text-blue-600"
+                  }
+                  `}
+                >
                   {item.spec}
                 </span>
               </div>

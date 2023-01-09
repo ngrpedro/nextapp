@@ -6,7 +6,7 @@ const partners: Partner[] = [
   {
     id: 1,
     name: "Pietro Ramos",
-    spec: "psico",
+    spec: "psicólogo",
     city: "Araçatuba - SP",
     isInstitute: false,
   },
@@ -20,21 +20,21 @@ const partners: Partner[] = [
   {
     id: 3,
     name: "Renata Morais",
-    spec: "medico",
+    spec: "médico",
     city: "Araçatuba - SP",
     isInstitute: false,
   },
   {
     id: 4,
     name: "Clínica Amor e Saúde",
-    spec: "medico",
+    spec: "médico",
     city: "Araçatuba - SP",
     isInstitute: true,
   },
   {
     id: 5,
     name: "Marcos da Silva",
-    spec: "psico",
+    spec: "psicólogo",
     city: "Birigui - SP",
     isInstitute: false,
   },
