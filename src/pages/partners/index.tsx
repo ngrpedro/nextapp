@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Hero from "../../components/sections/hero";
 import PartnerView from "../../components/sections/partnerView";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { Partner } from "../../utils/interfaces";
 
 type Props = {
@@ -16,7 +16,7 @@ export async function getAllPartners() {
   return partners;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const partners = await getAllPartners();
   return {
     props: {
