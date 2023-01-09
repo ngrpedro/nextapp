@@ -4,7 +4,7 @@ import { Partner } from "../utils/interfaces";
 import Link from "next/link";
 
 type Props = {
-  partners: Partner[];
+  partners?: Partner[];
 };
 
 const PartnerCard = ({ partners }: Props) => {

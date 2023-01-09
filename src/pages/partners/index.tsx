@@ -6,13 +6,18 @@ import { GetStaticProps } from "next";
 import { Partner } from "../../utils/interfaces";
 
 type Props = {
-  partners: Partner[];
+  partners?: Partner[];
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getAllPartners() {
   const res = await fetch("http://localhost:3000/api/partners");
   const partners: Partner[] = await res.json();
 
+  return partners;
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const partners = await getAllPartners();
   return {
     props: {
       partners,

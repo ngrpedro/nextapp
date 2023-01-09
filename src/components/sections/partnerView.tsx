@@ -3,7 +3,7 @@ import { Partner } from "../../utils/interfaces";
 import PartnerCard from "./../partnerCard";
 
 type Props = {
-  partners: Partner[];
+  partners?: Partner[];
 };
 
 const PartnerView = ({ partners }: Props) => {
