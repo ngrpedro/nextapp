@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
-import { CaretRight, HouseSimple } from "phosphor-react";
+import { CaretRight, HouseSimple, User } from "phosphor-react";
 import React from "react";
+import image from "../../public/img1.jpg";
 
 const Profile = () => {
   const router = useRouter();
@@ -19,7 +21,7 @@ const Profile = () => {
             <li className="inline-flex items-center">
               <a
                 href="#"
-                className="inline-flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-blue-600"
+                className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
               >
                 <HouseSimple size={20} />
                 Inicio
@@ -27,10 +29,10 @@ const Profile = () => {
             </li>
             <li>
               <div className="flex items-center">
-                <CaretRight size={16} />
+                <CaretRight className="text-gray-900" size={16} />
                 <a
                   href="#"
-                  className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2"
+                  className="ml-1 text-sm font-medium text-gray-900 hover:text-blue-900 md:ml-2"
                 >
                   Perfil
                 </a>
@@ -38,13 +40,20 @@ const Profile = () => {
             </li>
           </ol>
         </nav>
+        <div>
+          <Image
+            src={image}
+            alt="img"
+            className="w-full absolute inset-x-0 h-80 object-cover object-top"
+          />
+        </div>
 
         <section className="relative">
-          <div className="w-full h-64 bg-gray-400">teste</div>
-          <div className="absolute top-[11rem] left-10">
+          <div className="h-80 w-full"></div>
+          <div className="absolute top-[11rem]  bg-white p-6 rounded-lg w-full">
             <div className="flex items-start justify-start gap-6">
-              <div className="rounded-full bg-slate-600 w-56 h-56 text-center">
-                userAvatar
+              <div className="rounded-full bg-slate-300 w-56 h-56 flex items-center justify-center">
+                <User size={150} />
               </div>
 
               <div>
@@ -68,6 +77,7 @@ const Profile = () => {
             </div>
           </div>
         </section>
+
         <section className="mt-[12rem]">
           <div className="px-16 flex flex-col items-start justify-start gap-4">
             <h1 className="text-2xl font-bold block">Lorem ipsum dolor</h1>
