@@ -10,10 +10,11 @@ module.exports = {
       fontFamily: {
         asap: ["Asap", "sans-serif"],
         roboto: ["Roboto Slab", "serif"],
+        ibm: ["IBM Plex Sans", "sans-serif"],
       },
       backgroundImage: {
-        'hero-profile': "url('public/img1.jpg')",
-      }
+        "hero-profile": "url('public/img1.jpg')",
+      },
     },
   },
   plugins: [],
