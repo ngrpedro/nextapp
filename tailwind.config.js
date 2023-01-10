@@ -11,6 +11,9 @@ module.exports = {
         asap: ["Asap", "sans-serif"],
         roboto: ["Roboto Slab", "serif"],
       },
+      backgroundImage: {
+        'hero-profile': "url('public/img1.jpg')",
+      }
     },
   },
   plugins: [],
