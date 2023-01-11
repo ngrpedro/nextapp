@@ -33,30 +33,14 @@ const index = ({ partners }: Props) => {
       <Head>
         <title>Parceiros</title>
       </Head>
-      <nav className="flex mb-5" aria-label="Breadcrumb">
-        <ol className="inline-flex items-center space-x-1 md:space-x-3">
-          <li className="inline-flex items-center">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
-            >
-              <HouseSimple size={20} />
-              Inicio
-            </Link>
-          </li>
+      <div className="text-sm font-semibold text-slate-700 breadcrumbs">
+        <ul>
           <li>
-            <div className="flex items-center">
-              <Link
-                href="/partners"
-                className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
-              >
-                <CaretRight className="text-gray-900" size={16} />
-                Todos os parceiros
-              </Link>
-            </div>
+            <Link href="/">Inicio</Link>
           </li>
-        </ol>
-      </nav>
+          <li>Parceiros</li>
+        </ul>
+      </div>
       <div>
         <Hero />
         <PartnerView partners={partners} />

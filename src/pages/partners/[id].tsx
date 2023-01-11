@@ -25,43 +25,13 @@ const Profile = () => {
       </Head>
 
       <main>
-        <nav className="flex mb-5" aria-label="Breadcrumb">
-          <ol className="inline-flex items-center space-x-1 md:space-x-3">
-            <li className="inline-flex items-center">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
-              >
-                <HouseSimple size={20} />
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <Link
-                  href="/partners"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
-                  >
-                <CaretRight className="text-gray-900" size={16} />
-
-                  
-                  Todos os parceiros
-                </Link>
-              </div>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <CaretRight className="text-gray-900" size={16} />
-                <a
-                  href="#"
-                  className="ml-1 text-sm font-medium text-gray-900 hover:text-blue-900 md:ml-2"
-                >
-                  Perfil
-                </a>
-              </div>
-            </li>
-          </ol>
-        </nav>
+      <div className="text-sm font-semibold text-slate-700 breadcrumbs">
+        <ul>
+          <li><Link href="/">Inicio</Link></li> 
+          <li><Link href="/partners">Parceiros</Link></li> 
+          <li>Pietro Ramos - Psicólogo</li>
+        </ul>
+      </div>
         
         <div>
           <Image
