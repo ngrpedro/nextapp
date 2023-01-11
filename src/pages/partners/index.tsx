@@ -3,10 +3,8 @@ import Link from "next/link";
 import React from "react";
 import Hero from "../../components/partners/PartnerHero";
 import PartnerView from "../../components/partners/partnerView";
-import { GetServerSideProps } from "next";
-import { Partner } from "../../utils/interfaces";
-import { CaretRight, HouseSimple } from "phosphor-react";
 
+/* 
 type Props = {
   partners?: Partner[];
 };
@@ -26,8 +24,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   };
 };
+ */
 
-const index = ({ partners }: Props) => {
+const index = () => {
   return (
     <div className="text-gray-800 overflow-hidden">
       <Head>
@@ -43,7 +42,7 @@ const index = ({ partners }: Props) => {
       </div>
       <div>
         <Hero />
-        <PartnerView partners={partners} />
+        <PartnerView />
       </div>
     </div>
   );

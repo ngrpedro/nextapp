@@ -1,19 +1,32 @@
 import { Star, User } from "phosphor-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Partner } from "../../utils/interfaces";
 import Link from "next/link";
 
 type Props = {
-  partners?: Partner[];
+  _id: number;
+  name: string;
+  reception: string;
+  city: string;
+  isInstitute: boolean;
 };
 
-const PartnerCard = ({ partners }: Props) => {
+const PartnerCard = () => {
+  const [partners, setPartners] = useState<Props[]>();
+
+  useEffect(() => {
+    const res = fetch("http://localhost:3000/api/partners")
+      .then((res) => res.json())
+      .then((data) => setPartners(data));
+  }, []);
+
   console.log(partners);
+
   return (
     <>
       {partners?.map((item) => (
         <div key={item._id} className="card bg-base-100 border border-gray-200">
-            <div className="bg-gray-400 w-full h-[180px] rounded-t-2xl"></div>
+          <div className="bg-gray-400 w-full h-[180px] rounded-t-2xl"></div>
           <div className="card-body">
             <h2 className="card-title">{item.name}</h2>
             <div

@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { Partner } from "../../utils/interfaces";
 import PartnerCard from "./partnerCard";
 
-type Props = {
-  partners?: Partner[];
-};
-
-const PartnerView = ({ partners }: Props) => {
-  const [partner, setPartners] = useState(partners);
+const PartnerView = () => {
 
   return (
     <div className="my-10">
@@ -42,7 +37,7 @@ const PartnerView = ({ partners }: Props) => {
       </div>
 
       <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-5 sm:mx-0">
-        <PartnerCard partners={partner} />
+        <PartnerCard />
       </div>
     </div>
   );
