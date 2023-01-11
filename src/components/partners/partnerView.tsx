@@ -20,7 +20,7 @@ const PartnerView = ({ partners }: Props) => {
           </p>
           <div className="card-actions text-slate-900">
             <select className="select select-bordered w-full max-w-xs">
-              <option disabled selected>
+              <option disabled defaultValue="default">
                 Tipo de serviço
               </option>
 
@@ -30,7 +30,7 @@ const PartnerView = ({ partners }: Props) => {
             </select>
 
             <select className="select w-full max-w-xs">
-              <option disabled selected>
+              <option disabled defaultValue="default">
                 Escolha pela cidade
               </option>
               <option value="US">Instituição de acolhimento</option>
@@ -41,9 +41,10 @@ const PartnerView = ({ partners }: Props) => {
         </div>
       </div>
 
-      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-5 sm:mx-0">
         <PartnerCard partners={partner} />
       </div>
+
     </div>
   );
 };
