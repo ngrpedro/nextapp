@@ -1,4 +1,5 @@
 import { Inter } from "@next/font/google";
+import Head from "next/head";
 import Link from "next/link";
 import { User } from "../utils/interfaces";
 
@@ -10,12 +11,17 @@ type Props = {
 
 const Home = ({ users }: Props) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-5 h-[30rem] ">
-      <h1 className="text-2xl font-semibold ">
-        Bem vinde ao Ecosistema Plural
-      </h1>
-      <Link href="/partners">Ver nossos parceiros</Link>
-    </div>
+    <>
+      <Head>
+        <title>Home</title>
+      </Head>
+      <div className="flex flex-col items-center justify-center gap-5 h-[30rem] ">
+        <h1 className="text-2xl font-semibold ">
+          Bem vinde ao Ecosistema Plural
+        </h1>
+        <Link href="/partners">Ver nossos parceiros</Link>
+      </div>
+    </>
   );
 };
 export default Home;

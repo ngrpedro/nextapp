@@ -5,10 +5,7 @@ import Hero from "../../components/partners/PartnerHero";
 import PartnerView from "../../components/partners/partnerView";
 import { GetServerSideProps } from "next";
 import { Partner } from "../../utils/interfaces";
-import {
-  CaretRight,
-  HouseSimple
-} from "phosphor-react";
+import { CaretRight, HouseSimple } from "phosphor-react";
 
 type Props = {
   partners?: Partner[];
@@ -32,40 +29,37 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const index = ({ partners }: Props) => {
   return (
-    <div className="text-gray-800 pt-4 overflow-hidden">
+    <div className="text-gray-800 overflow-hidden">
       <Head>
-        <title>Home</title>
+        <title>Parceiros</title>
       </Head>
-      <div>
       <nav className="flex mb-5" aria-label="Breadcrumb">
-          <ol className="inline-flex items-center space-x-1 md:space-x-3">
-            <li className="inline-flex items-center">
+        <ol className="inline-flex items-center space-x-1 md:space-x-3">
+          <li className="inline-flex items-center">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
+            >
+              <HouseSimple size={20} />
+              Inicio
+            </Link>
+          </li>
+          <li>
+            <div className="flex items-center">
               <Link
-                href="/"
+                href="/partners"
                 className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
               >
-                <HouseSimple size={20} />
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <div className="flex items-center">
-                <Link
-                  href="/partners"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-blue-900"
-                  >
                 <CaretRight className="text-gray-900" size={16} />
-
-                  
-                  Todos os parceiros
-                </Link>
-              </div>
-            </li>
-          </ol>
-        </nav>
-        
-      <Hero />
-      <PartnerView partners={partners} />
+                Todos os parceiros
+              </Link>
+            </div>
+          </li>
+        </ol>
+      </nav>
+      <div>
+        <Hero />
+        <PartnerView partners={partners} />
       </div>
     </div>
   );
