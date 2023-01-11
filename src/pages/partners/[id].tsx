@@ -11,12 +11,30 @@ import {
   FacebookLogo,
   WhatsappLogo,
 } from "phosphor-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import image from "../../public/img1.jpg";
+
+type Props = {
+  _id: number;
+  name: string;
+  reception: string;
+  city: string;
+  isInstitute: boolean;
+};
 
 const Profile = () => {
   const router = useRouter();
   const partnerId = router.query.id;
+
+  const [partner, setPartner] = useState<Props[]>();
+
+  useEffect(() => {
+    const res = fetch("http://localhost:3000/api/partners")
+      .then((res) => res.json())
+      .then((data) => setPartner(data));
+  }, []);
+
+  console.log(partner);
 
   return (
     <div>
@@ -25,14 +43,18 @@ const Profile = () => {
       </Head>
 
       <main>
-      <div className="text-sm font-semibold text-slate-700 breadcrumbs">
-        <ul>
-          <li><Link href="/">Inicio</Link></li> 
-          <li><Link href="/partners">Parceiros</Link></li> 
-          <li>Pietro Ramos - Psicólogo</li>
-        </ul>
-      </div>
-        
+        <div className="text-sm font-semibold text-slate-700 breadcrumbs">
+          <ul>
+            <li>
+              <Link href="/">Inicio</Link>
+            </li>
+            <li>
+              <Link href="/partners">Parceiros</Link>
+            </li>
+            <li>Pietro Ramos - Psicólogo</li>
+          </ul>
+        </div>
+
         <div>
           <Image
             src={image}
@@ -107,7 +129,6 @@ const Profile = () => {
         </section>
 
         <section className="mt-[12rem] px-16 flex flex-col gap-16 mb-12">
-
           <div className="flex flex-col items-start justify-start gap-4">
             <h1 className="text-2xl font-bold block">Lorem ipsum dolor</h1>
             <p className="block text-gray-600 text-md font-medium font-asab">
@@ -118,9 +139,7 @@ const Profile = () => {
             </p>
           </div>
 
-
           <div className="grid grid-cols-1 md:grid-cols-2">
-
             <div className="flex flex-col items-start justify-start gap-4">
               <h1 className="text-2xl font-bold block">Lorem ipsum dolor</h1>
               <p className="block text-gray-600 text-md font-medium font-asab">
@@ -131,7 +150,6 @@ const Profile = () => {
               </p>
             </div>
 
-
             <div className="flex flex-col items-start justify-start gap-4">
               <h1 className="text-2xl font-bold block">Lorem ipsum dolor</h1>
               <p className="block text-gray-600 text-md font-medium font-asab">
@@ -141,8 +159,6 @@ const Profile = () => {
                 corrupti, suscipit enim nihil.
               </p>
             </div>
-
-
           </div>
         </section>
       </main>

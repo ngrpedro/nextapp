@@ -20,8 +20,6 @@ const PartnerCard = () => {
       .then((data) => setPartners(data));
   }, []);
 
-  console.log(partners);
-
   return (
     <>
       {partners?.map((item) => (
