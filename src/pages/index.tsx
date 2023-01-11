@@ -20,10 +20,11 @@ const Home = ({ users }: Props) => {
         <title>Home</title>
       </Head>
       <main>
-        <section className="grid grid-cols-1 md:grid-cols-2 items-center justify-center lg:-mt-10">
-          <div className="flex flex-col items-center justify-center text-center md:text-left md:items-start md:justify-start gap-3 md:gap-5 mt-8 md:mt-0">
-            <h3 className="text-2xl md:text-3xl font-light">Seja acolhide</h3>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+        <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center lg:-mt-10">
+          <div className="flex flex-col items-center justify-center text-center lg:text-left lg:items-start 
+                          lg:justify-start gap-3 lg:gap-5 mt-8 lg:mt-0">
+            <h3 className="text-2xl tracking-tight font-light text-gray-900 sm:text-3xl">Seja acolhide</h3>
+            <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-6xl">
               Por pessoas que estão prontas para nos receber!
             </h1>
             <p>
@@ -41,7 +42,7 @@ const Home = ({ users }: Props) => {
         </section>
 
         <section className="my-10">
-          <h1 className="text-6xl leading-[5rem] text-center text-gray-700 font-bold">
+          <h1 className="text-4xl tracking-tight font-extrabold text-gray-700 sm:text-7xl !leading-[1.2] text-center">
             Magna fugiat elit proident{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-600">
               reprehenderit Lorem
@@ -57,10 +58,6 @@ const Home = ({ users }: Props) => {
             </span>
           </h1>
         </section>
-
-
-
-
 
         <section className="card bg-gradient-to-br from-blue-400 via-indigo-600 to-sky-600 mt-24">
           <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -85,9 +82,6 @@ const Home = ({ users }: Props) => {
               </div>
           </div>
         </section>
-
-
-
       </main>
     </>
   );
