@@ -6,7 +6,9 @@ const Navbar = () => {
   return (
     <div className="py-4 px-6 mb-4 flex items-center justify-between border-b border-gray-500">
       <span className="text-2xl font-semibold whitespace-nowrap">
-        <Link href="/">EcoPlural</Link>
+        <Link href="/" className="font-bold text-4xl
+         text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-600
+        ">EcoPlural</Link>
       </span>
       <div className="block md:hidden cursor-pointer">
         <List size={22} />
