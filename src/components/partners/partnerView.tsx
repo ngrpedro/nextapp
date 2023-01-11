@@ -44,7 +44,6 @@ const PartnerView = ({ partners }: Props) => {
       <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-5 sm:mx-0">
         <PartnerCard partners={partner} />
       </div>
-
     </div>
   );
 };
