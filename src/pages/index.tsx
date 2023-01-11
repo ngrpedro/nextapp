@@ -30,12 +30,13 @@ const Home = ({ users }: Props) => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
               corporis saepe, aut similique unde accusamus.
             </p>
-            <button
+            <Link
+              href="/partners"
               className="py-4 px-10 mt-5 text-lg text-white rounded-full font-semibold
             bg-gradient-to-r from-purple-900 to-pink-400"
             >
               Veja nossos parceiros
-            </button>
+            </Link>
           </div>
 
           <div className="flex items-center justify-center my-8">
