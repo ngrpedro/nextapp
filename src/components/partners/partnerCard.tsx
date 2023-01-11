@@ -12,10 +12,8 @@ const PartnerCard = ({ partners }: Props) => {
   return (
     <>
       {partners?.map((item) => (
-        <div key={item._id} className="card bg-base-100 shadow-xl">
-          <figure>
-            <div className="bg-gray-400 w-full h-[180px]"></div>
-          </figure>
+        <div key={item._id} className="card bg-base-100 border border-gray-200">
+            <div className="bg-gray-400 w-full h-[180px] rounded-t-2xl"></div>
           <div className="card-body">
             <h2 className="card-title">{item.name}</h2>
             <div
