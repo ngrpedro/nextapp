@@ -29,14 +29,9 @@ const Home = ({ users }: Props) => {
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
               corporis saepe, aut similique unde accusamus.
-            </p>
-            <Link
-              href="/partners"
-              className="py-4 px-10 mt-5 text-lg text-white rounded-lg font-semibold
-            bg-gradient-to-r from-red-500 to-blue-400"
-            >
-              Veja nossos parceiros
-            </Link>
+            </p>            
+            <Link href="/partners" className="btn btn-wide normal-case text-lg font-normal bg-gradient-to-r from-red-500
+            to-blue-400 border-none hover:opacity-80">Conheça nossos parceiro</Link>
           </div>
 
           <div className="flex items-center justify-center my-8">
