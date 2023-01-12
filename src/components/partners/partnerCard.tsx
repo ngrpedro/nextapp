@@ -7,7 +7,7 @@ const PartnerCard = () => {
   const [partners, setPartners] = useState<IPartner[]>();
 
   useEffect(() => {
-    const res = fetch("http://localhost:3000/api/partners")
+    const res = fetch("/api/partners")
       .then((res) => res.json())
       .then((data) => setPartners(data));
   }, []);
@@ -25,7 +25,6 @@ const PartnerCard = () => {
                 ${item.reception === "médico" && "bg-green-800"}
                 ${item.reception === "acolhimento" && "bg-blue-800"}`}
             >
-              {" "}
               {item.reception}
             </div>
             <div className="flex items-start justify-start gap-1 mt-2">

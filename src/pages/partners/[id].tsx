@@ -22,7 +22,7 @@ const Profile = () => {
   const [partner, setPartner] = useState<IPartner | undefined>();
 
   useEffect(() => {
-    const res = fetch(`http://localhost:3000/api/partners/${partnerId}`)
+    const res = fetch(`/api/partners/${partnerId}`)
       .then((res) => res.json())
       .then((data) => setPartner(data));
   }, []);
