@@ -13,13 +13,10 @@ import {
 } from "phosphor-react";
 import React, { useEffect, useState } from "react";
 import image from "../../public/img1.jpg";
+import { Partner } from "../../utils/interfaces";
 
 type Props = {
-  _id: number;
-  name: string;
-  reception: string;
-  city: string;
-  isInstitute: boolean;
+  partner: Partner[];
 };
 
 const Profile = () => {
@@ -29,7 +26,7 @@ const Profile = () => {
   const [partner, setPartner] = useState<Props[]>();
 
   useEffect(() => {
-    const res = fetch("http://localhost:3000/api/partners")
+    const res = fetch(`http://localhost:3000/api/partners/${partnerId}`)
       .then((res) => res.json())
       .then((data) => setPartner(data));
   }, []);
