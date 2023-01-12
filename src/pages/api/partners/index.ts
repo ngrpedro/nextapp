@@ -7,17 +7,19 @@ export default async function handlerPartners(
   res: NextApiResponse
 ) {
   try {
-    const { method } = req;
+    const { method, body } = req;
+    const { db } = await connectToDataBase();
 
     switch (method) {
       case "GET":
-        const { db } = await connectToDataBase();
         const data = await db.collection("partners").find().toArray();
-
         res.status(200).json(data);
         break;
+      case "POST":
+        const dataToPost = await db.collection("partners").insertOne(req.body);
+        res.status(200).json(dataToPost);
+        break;
       default:
-        res.setHeader("Allow", ["GET"]);
         res.status(405).end(`Method ${method} not allowed`);
     }
 

@@ -1,11 +1,6 @@
 import { ObjectId } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
-import { IPartner } from "../../../utils/interfaces";
 import { connectToDataBase } from "../../../utils/mongodb";
-
-type Props = {
-  partner: IPartner;
-};
 
 export default async function hadlePartnerByID(
   req: NextApiRequest,
