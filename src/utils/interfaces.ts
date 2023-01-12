@@ -9,4 +9,7 @@ export interface IPartner {
   reception: string;
   city: string;
   isInstitute: boolean;
+  colege: string;
+  about: string;
+  tags: string;
 }
