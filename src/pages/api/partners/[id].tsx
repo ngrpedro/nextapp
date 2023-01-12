@@ -22,7 +22,13 @@ export default async function hadlePartnerByID(
         const data = await db
           .collection("partners")
           .findOne({ _id: new ObjectId(id as string) });
+
+        if (!data) {
+          res.status(404).json("Partner not found");
+        }
+
         res.status(200).json(data);
+
         break;
       default:
         res.setHeader("Allow", ["GET"]);
