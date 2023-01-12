@@ -12,6 +12,14 @@ const PartnerCard = () => {
       .then((data) => setPartners(data));
   }, []);
 
+  if (partners === undefined) {
+    return (
+      <div className="flex items-center justify-center w-full">
+        <progress className="progress progress-info w-56"></progress>
+      </div>
+    );
+  }
+
   return (
     <>
       {partners?.map((item) => (
