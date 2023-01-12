@@ -13,25 +13,19 @@ import {
 } from "phosphor-react";
 import React, { useEffect, useState } from "react";
 import image from "../../public/img1.jpg";
-import { Partner } from "../../utils/interfaces";
-
-type Props = {
-  partner: Partner[];
-};
+import { IPartner } from "../../utils/interfaces";
 
 const Profile = () => {
   const router = useRouter();
   const partnerId = router.query.id;
 
-  const [partner, setPartner] = useState<Props[]>();
+  const [partner, setPartner] = useState<IPartner>();
 
   useEffect(() => {
     const res = fetch(`http://localhost:3000/api/partners/${partnerId}`)
       .then((res) => res.json())
       .then((data) => setPartner(data));
   }, []);
-
-  console.log(partner);
 
   return (
     <div>
@@ -40,6 +34,7 @@ const Profile = () => {
       </Head>
 
       <main>
+        {/* Breacrumb */}
         <div className="text-sm font-semibold text-slate-700 breadcrumbs">
           <ul>
             <li>
@@ -48,10 +43,13 @@ const Profile = () => {
             <li>
               <Link href="/partners">Parceiros</Link>
             </li>
-            <li>Pietro Ramos - Psicólogo</li>
+            <li className="capitalize">
+              {partner?.name} - {partner?.reception}
+            </li>
           </ul>
         </div>
 
+        {/* Bg Image */}
         <div>
           <Image
             src={image}
@@ -60,23 +58,26 @@ const Profile = () => {
           />
         </div>
 
+        {/* Main Profiles */}
         <section className="relative">
           <div className="h-80 w-full"></div>
           <div
             className="absolute top-[11rem] bg-white p-6 rounded-t-lg w-full 
                     border-b border-gray-300 flex items-center justify-between"
           >
+            {/* Card Main Profile */}
             <div className="flex items-start justify-center gap-6">
               <div className="rounded-full bg-slate-300 w-56 h-56 flex items-center justify-center">
                 <User size={150} />
               </div>
 
+              {/* About */}
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
-                  <h1 className="text-2xl font-bold">Pietro Ramos</h1>
+                  <h1 className="text-2xl font-bold">{partner?.name}</h1>
                   <div>
                     <p className="text-gray-900 text-sm font-medium font-ibm">
-                      Araçatuba - SP
+                      {partner?.city}
                     </p>
                     <p className="text-gray-900 text-sm font-medium  font-ibm">
                       Psicologo especialista não sei no que.
@@ -113,7 +114,7 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-
+            {/* Galery */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-gray-500 w-24 h-24 rounded-md"></div>
               <div className="bg-gray-500 w-24 h-24 rounded-md"></div>
@@ -125,6 +126,7 @@ const Profile = () => {
           </div>
         </section>
 
+        {/* Card Main Content */}
         <section className="mt-[12rem] px-16 flex flex-col gap-16 mb-12">
           <div className="flex flex-col items-start justify-start gap-4">
             <h1 className="text-2xl font-bold block">Lorem ipsum dolor</h1>

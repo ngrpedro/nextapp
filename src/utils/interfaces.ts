@@ -3,7 +3,7 @@ export interface User {
   name: string;
 }
 
-export interface Partner {
+export interface IPartner {
   _id: string;
   name: string;
   reception: string;
