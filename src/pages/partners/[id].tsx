@@ -28,7 +28,11 @@ const Profile = () => {
   }, []);
 
   if (partner === undefined) {
-    return "loading...";
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <progress className="progress progress-info w-56"></progress>
+      </div>
+    );
   }
   return (
     <div>

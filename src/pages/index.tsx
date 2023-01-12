@@ -23,8 +23,8 @@ const Home = ({ users }: Props) => {
         <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center lg:-mt-10">
           <div
             className="flex flex-col items-center justify-center text-center lg:text-left lg:items-start 
-                          lg:justify-start gap-5 mt-8 lg:mt-0
-                          max-w-[717px] m-auto"
+                          lg:justify-start gap-5 mt-8
+                          max-w-[717px] mx-auto"
           >
             <h3 className="text-lg tracking-tight font-extrabold text-gray-900">
               Seja acolhide
