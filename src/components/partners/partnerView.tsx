@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Partner } from "../../utils/interfaces";
 import PartnerCard from "./partnerCard";
 
 const PartnerView = () => {

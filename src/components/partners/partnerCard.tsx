@@ -1,18 +1,10 @@
 import { Star, User } from "phosphor-react";
 import React, { useEffect, useState } from "react";
-import { Partner } from "../../utils/interfaces";
+import { IPartner } from "../../utils/interfaces";
 import Link from "next/link";
 
-type Props = {
-  _id: string;
-  name: string;
-  reception: string;
-  city: string;
-  isInstitute: boolean;
-};
-
 const PartnerCard = () => {
-  const [partners, setPartners] = useState<Props[]>();
+  const [partners, setPartners] = useState<IPartner[]>();
 
   useEffect(() => {
     const res = fetch("http://localhost:3000/api/partners")
