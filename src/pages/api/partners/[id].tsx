@@ -1,32 +1,28 @@
+import { ObjectId } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
+import { Partner } from "../../../utils/interfaces";
 import { connectToDataBase } from "../../../utils/mongodb";
 
 type Props = {
-  _id: string;
-  name: string;
-  reception: string;
-  city: string;
-  isInstitute: boolean;
+  partner: Partner;
 };
 
 export default async function hadlePartnerByID(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const {
+    query: { id },
+    method,
+  } = req;
   try {
-    const {
-      query: { id },
-      method,
-    } = req;
-
     switch (method) {
       case "GET":
         const { db } = await connectToDataBase();
-        const data = await db.collection("partners").find().toArray();
-
-        const filtered = data.filter((partner): Props => partner._id === id);
-
-        res.status(200).json(filtered);
+        const data = await db
+          .collection("partners")
+          .findOne({ _id: new ObjectId(id as string) });
+        res.status(200).json(data);
         break;
       default:
         res.setHeader("Allow", ["GET"]);

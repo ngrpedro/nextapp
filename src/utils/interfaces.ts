@@ -4,7 +4,7 @@ export interface User {
 }
 
 export interface Partner {
-  _id: number;
+  _id: string;
   name: string;
   reception: string;
   city: string;

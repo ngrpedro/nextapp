@@ -4,7 +4,7 @@ import { Partner } from "../../utils/interfaces";
 import Link from "next/link";
 
 type Props = {
-  _id: number;
+  _id: string;
   name: string;
   reception: string;
   city: string;
