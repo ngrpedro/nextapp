@@ -4,28 +4,6 @@ import React from "react";
 import Hero from "../../components/partners/PartnerHero";
 import PartnerView from "../../components/partners/partnerView";
 
-/* 
-type Props = {
-  partners?: Partner[];
-};
-
-export async function getAllPartners() {
-  const res = await fetch("http://localhost:3000/api/partners");
-  const partners: Partner[] = await res.json();
-
-  return partners;
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const partners = await getAllPartners();
-  return {
-    props: {
-      partners,
-    },
-  };
-};
- */
-
 const index = () => {
   return (
     <div className="text-gray-800 overflow-hidden">

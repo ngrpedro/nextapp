@@ -19,7 +19,7 @@ const Profile = () => {
   const router = useRouter();
   const partnerId = router.query.id;
 
-  const [partner, setPartner] = useState<IPartner>();
+  const [partner, setPartner] = useState<IPartner | undefined>();
 
   useEffect(() => {
     const res = fetch(`http://localhost:3000/api/partners/${partnerId}`)
@@ -27,6 +27,9 @@ const Profile = () => {
       .then((data) => setPartner(data));
   }, []);
 
+  if (partner === undefined) {
+    return "loading...";
+  }
   return (
     <div>
       <Head>
