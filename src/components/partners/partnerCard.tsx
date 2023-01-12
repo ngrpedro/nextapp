@@ -31,6 +31,7 @@ const PartnerCard = () => {
               className={`badge border-none 
                 ${item.reception === "psicólogo" && "bg-pink-800"}
                 ${item.reception === "médico" && "bg-green-800"}
+                ${item.reception === "clinica médica" && "bg-yellow-600"}
                 ${item.reception === "acolhimento" && "bg-blue-800"}`}
             >
               {item.reception}
@@ -42,11 +43,7 @@ const PartnerCard = () => {
               <Star size={16} />
               <Star size={16} />
             </div>
-            <p className="my-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud
-            </p>
+            <p className="my-3 line-clamp-3">{item.about}</p>
             <p className="font-semibold">{item.city}</p>
             <Link
               href={`/partners/${item._id}`}
