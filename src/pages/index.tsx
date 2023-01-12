@@ -9,11 +9,7 @@ import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type Props = {
-  users: User[];
-};
-
-const Home = ({ users }: Props) => {
+const Home = () => {
   return (
     <>
       <Head>
