@@ -21,7 +21,6 @@ const Profile = () => {
 
   const [partner, setPartner] = useState<IPartner | undefined>();
   const tags = partner?.tags.split(",");
-  console.log(tags);
 
   useEffect(() => {
     const res = fetch(`/api/partners/${partnerId}`)
@@ -76,7 +75,7 @@ const Profile = () => {
           >
             {/* Card Main Profile */}
             <div className="flex flex-col md:flex-row items-start justify-center gap-6">
-              <div className="rounded-full bg-slate-300 w-56 h-56 flex items-center justify-center m-auto">
+              <div className="rounded-full bg-slate-300 w-56 h-56 flex items-center justify-center m-auto sm:m-0">
                 <User size={150} />
               </div>
 
