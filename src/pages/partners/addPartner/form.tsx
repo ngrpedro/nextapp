@@ -21,7 +21,7 @@ const form = () => {
       </div>
 
       <div className="max-w-[63rem] m-auto mt-10 mb-16">
-        <h1 className="text-6xl font-extrabold text-center">
+        <h1 className="text-5xl font-extrabold text-center lg:text-7xl 2xl:text-8xl">
           <span className="text-transparent bg-gradient-to-br bg-clip-text from-teal-700 via-indigo-700 to-sky-600">
             Seja
           </span>{" "}
