@@ -1,13 +1,47 @@
 import React from "react";
+import Head from "next/head";
+import Link from "next/link";
 
 const form = () => {
   return (
     <>
+      <Head>
+        <title>Novo Parceiro</title>
+      </Head>
+      <div className="text-sm font-semibold text-slate-700 breadcrumbs">
+        <ul>
+          <li>
+            <Link href="/">Inicio</Link>
+          </li>
+          <li>
+            <Link href="/partners">Parceiros</Link>
+          </li>
+          <li>Novo parceiro</li>
+        </ul>
+      </div>
+
+      <div className="max-w-[63rem] m-auto mt-10 mb-16">
+        <h1 className="text-6xl font-extrabold text-center">
+          <span className="text-transparent bg-gradient-to-br bg-clip-text from-teal-700 via-indigo-700 to-sky-600">
+            Seja
+          </span>{" "}
+          <span className="text-transparent bg-gradient-to-tr bg-clip-text from-blue-700 via-pink-700 to-red-700">
+            nosso parceiro
+          </span>
+        </h1>
+
+        <p className="text-center px-10 sm:px-36 sm:py-10 font-asap text-gray-600">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco
+        </p>
+      </div>
+
       <div>
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg font-medium leading-6 text-gray-900">
+              <h3 className="text-2xl tracking-tight font-extrabold text-gray-800">
                 Profile
               </h3>
               <p className="mt-1 text-sm text-gray-600">
@@ -18,7 +52,7 @@ const form = () => {
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
             <form action="#" method="POST">
-              <div className="shadow sm:overflow-hidden sm:rounded-md">
+              <div className="overflow-hidden rounded-md border border-gray-300">
                 <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-3 sm:col-span-2">
@@ -146,7 +180,7 @@ const form = () => {
 
       <div className="hidden sm:block" aria-hidden="true">
         <div className="py-5">
-          <div className="border-t border-gray-200" />
+          <div className="border-t border-gray-300" />
         </div>
       </div>
 
@@ -154,7 +188,7 @@ const form = () => {
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg font-medium leading-6 text-gray-900">
+              <h3 className="text-2xl tracking-tight font-extrabold text-gray-800">
                 Personal Information
               </h3>
               <p className="mt-1 text-sm text-gray-600">
@@ -164,7 +198,7 @@ const form = () => {
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
             <form action="#" method="POST">
-              <div className="overflow-hidden shadow sm:rounded-md">
+              <div className="overflow-hidden rounded-md border border-gray-300">
                 <div className="bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-6 gap-6">
                     <div className="col-span-6 sm:col-span-3">
@@ -315,7 +349,7 @@ const form = () => {
 
       <div className="hidden sm:block" aria-hidden="true">
         <div className="py-5">
-          <div className="border-t border-gray-200" />
+          <div className="border-t border-gray-300" />
         </div>
       </div>
 
@@ -323,7 +357,7 @@ const form = () => {
         <div className="md:grid md:grid-cols-3 md:gap-6">
           <div className="md:col-span-1">
             <div className="px-4 sm:px-0">
-              <h3 className="text-lg font-medium leading-6 text-gray-900">
+              <h3 className="text-2xl tracking-tight font-extrabold text-gray-800">
                 Notifications
               </h3>
               <p className="mt-1 text-sm text-gray-600">
@@ -333,7 +367,7 @@ const form = () => {
           </div>
           <div className="mt-5 md:col-span-2 md:mt-0">
             <form action="#" method="POST">
-              <div className="overflow-hidden shadow sm:rounded-md">
+              <div className="overflow-hidden rounded-md border border-gray-300">
                 <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
                   <fieldset>
                     <legend className="sr-only">By Email</legend>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -20,9 +21,9 @@ const Hero = () => {
         </p>
       </div>
       <div className="flex items-center justify-center py-6">
-        <button className="btn btn-wide normal-case text-lg font-normal bg-pink-600 border-none hover:bg-pink-500">
+        <Link href="/partners/addPartner/form" className="btn btn-wide normal-case text-lg font-normal bg-pink-600 border-none hover:bg-pink-500">
           Seja nosso parceiro
-        </button>
+        </Link>
       </div>
     </section>
   );
