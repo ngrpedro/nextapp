@@ -68,10 +68,9 @@ const Profile = () => {
 
         {/* Main Profiles */}
         <section className="relative">
-          <div className="h-80 w-full"></div>
           <div
-            className="absolute top-[11rem] bg-white p-6 rounded-t-lg w-full 
-                    border-b border-gray-300 flex flex-col sm:flex-row items-center justify-between gap-8"
+            className="mt-[15rem] bg-white p-6 rounded-t-lg w-full border-b border-gray-300 
+                    flex flex-col sm:flex-row items-center justify-between gap-8"
           >
             {/* Card Main Profile */}
             <div className="flex flex-col md:flex-row items-start justify-center gap-6">
@@ -126,7 +125,7 @@ const Profile = () => {
         </section>
 
         {/* Card Main Content */}
-        <section className="mt-[12rem] px-16 flex flex-col gap-16 mb-12">
+        <section className="px-16 flex flex-col gap-16 mb-12 mt-16">
           <div className="flex flex-col items-start justify-start gap-4">
             <h1 className="text-2xl font-bold block">Lorem ipsum dolor</h1>
             <p className="block text-gray-600 text-md font-medium font-asab">
