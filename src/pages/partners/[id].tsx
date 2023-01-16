@@ -20,6 +20,8 @@ const Profile = () => {
   const partnerId = router.query.id;
 
   const [partner, setPartner] = useState<IPartner | undefined>();
+  const tags = partner?.tags.split(",");
+  console.log(tags);
 
   useEffect(() => {
     const res = fetch(`/api/partners/${partnerId}`)
@@ -70,16 +72,16 @@ const Profile = () => {
           <div className="h-80 w-full"></div>
           <div
             className="absolute top-[11rem] bg-white p-6 rounded-t-lg w-full 
-                    border-b border-gray-300 flex items-center justify-between"
+                    border-b border-gray-300 flex flex-col sm:flex-row items-center justify-between gap-8"
           >
             {/* Card Main Profile */}
-            <div className="flex items-start justify-center gap-6">
-              <div className="rounded-full bg-slate-300 w-56 h-56 flex items-center justify-center">
+            <div className="flex flex-col md:flex-row items-start justify-center gap-6">
+              <div className="rounded-full bg-slate-300 w-56 h-56 flex items-center justify-center m-auto">
                 <User size={150} />
               </div>
 
               {/* About */}
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-6 items-center text-center sm:items-start sm:text-start">
                 <div className="flex flex-col gap-2">
                   <h1 className="text-2xl font-bold">{partner?.name}</h1>
                   <div>
@@ -92,26 +94,16 @@ const Profile = () => {
                   </div>
                 </div>
 
-                <div className=" flex items-center justify-start gap-2">
-                  <span
-                    className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 
+                <div className="flex flex-wrap items-center justify-start gap-2">
+                  {tags?.map((item, index) => (
+                    <span
+                      key={index}
+                      className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 
                   rounded"
-                  >
-                    Homem trans
-                  </span>
-
-                  <span
-                    className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 
-                  rounded"
-                  >
-                    Traumas
-                  </span>
-                  <span
-                    className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 
-                  rounded"
-                  >
-                    LGBT+
-                  </span>
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
 
                 <div className="flex items-center justify-start gap-2">
@@ -121,6 +113,7 @@ const Profile = () => {
                 </div>
               </div>
             </div>
+
             {/* Galery */}
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-gray-500 w-24 h-24 rounded-md"></div>

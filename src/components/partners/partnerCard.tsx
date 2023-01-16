@@ -14,7 +14,7 @@ const PartnerCard = () => {
 
   if (partners === undefined) {
     return (
-      <div className="flex items-center justify-center w-full">
+      <div className="flex items-center justify-center w-full col-span-2">
         <progress className="progress progress-info w-56"></progress>
       </div>
     );
