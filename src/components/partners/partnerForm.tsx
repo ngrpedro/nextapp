@@ -5,7 +5,7 @@ const PartnerForm = () => {
   return (
     <div className="space-y-8">
       <div className="md:grid md:grid-cols-3 md:gap-6 relative">
-        <div className="md:col-span-1">
+      <div className="md:col-span-1 py-10 md:py-0 sticky top-0 bg-white border-b md:border-none border-gray-200 z-[100]">
           <div className="px-4 sm:px-0 sticky top-6">
             <h3 className="text-2xl tracking-tight font-extrabold text-gray-800">
               Profile
@@ -151,7 +151,7 @@ const PartnerForm = () => {
       <div className="divider"></div>
 
       <div className="md:grid md:grid-cols-3 md:gap-6 relative">
-        <div className="md:col-span-1">
+        <div className="md:col-span-1 py-10 md:py-0 sticky top-0 bg-white border-b md:border-none border-gray-200 z-[100]">
           <div className="px-4 sm:px-0 sticky top-6">
             <h3 className="text-2xl tracking-tight font-extrabold text-gray-800">
               Um pouco mais sobre você
@@ -162,6 +162,7 @@ const PartnerForm = () => {
             </p>
           </div>
         </div>
+
         <div className="mt-5 md:col-span-2 md:mt-0">
           <form action="#" method="POST">
             <div className="overflow-hidden rounded-md border border-gray-300">
