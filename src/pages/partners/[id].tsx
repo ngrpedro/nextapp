@@ -14,27 +14,36 @@ import {
 import React, { useEffect, useState } from "react";
 import image from "../../public/img1.jpg";
 import { IPartner } from "../../utils/interfaces";
+import useSWR from "swr";
 
 const Profile = () => {
-  const router = useRouter();
-  const partnerId = router.query.id;
-
   const [partner, setPartner] = useState<IPartner | undefined>();
-  const tags = partner?.tags.split(",");
 
-  useEffect(() => {
-    const res = fetch(`/api/partners/${partnerId}`)
-      .then((res) => res.json())
-      .then((data) => setPartner(data));
-  }, []);
+  const fetcher = async (url: string) => {
+    const res = await fetch(url);
+    const data = await res.json();
 
-  if (partner === undefined) {
+    if (res.status !== 200) {
+      throw new Error(data.message);
+    }
+    return setPartner(data);
+  };
+
+  const { query } = useRouter();
+  const { data, error } = useSWR(
+    () => query.id && `/api/partners/${query.id}`,
+    fetcher
+  );
+  console.log(query.id);
+
+  if (error) return <div>{error.message}</div>;
+  if (!partner)
     return (
       <div className="w-full h-screen flex items-center justify-center">
         <progress className="progress progress-info w-56"></progress>
       </div>
     );
-  }
+
   return (
     <div>
       <Head>
@@ -70,7 +79,7 @@ const Profile = () => {
         <section className="relative">
           <div
             className="mt-[15rem] bg-white p-6 rounded-t-lg w-full border-b border-gray-300 
-                    flex flex-col sm:flex-row items-center justify-between gap-8"
+                  flex flex-col sm:flex-row items-center justify-between gap-8"
           >
             {/* Card Main Profile */}
             <div className="flex flex-col md:flex-row items-start justify-center gap-6">
@@ -91,17 +100,15 @@ const Profile = () => {
                     </p>
                   </div>
                 </div>
-
                 <div className="flex flex-wrap items-center justify-start gap-2">
-                  {tags?.map((item, index) => (
-                    <span
-                      key={index}
-                      className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 
-                  rounded"
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {/* {tags?.map((item, index) => (
+                  <span
+                    key={index}
+                    className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded"
+                  >
+                    {item}
+                  </span>
+                ))} */}
                 </div>
 
                 <div className="flex items-center justify-start gap-2">
