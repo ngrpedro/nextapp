@@ -27,7 +27,7 @@ const PartnerForm = () => {
                   <div className="flex items-center justify-start gap-8">
                     <div className="avatar">
                       <div className="w-24 rounded-full">
-                        <img src="https://placeimg.com/192/192/people" />
+                        <img src="https://placeimg.com/1000/1000/people" />
                       </div>
                     </div>
                     <input
@@ -175,7 +175,7 @@ const PartnerForm = () => {
                     First name
                   </label>
                   <select className="select select-bordered w-full max-w-xs">
-                    <option disabled selected>
+                    <option disabled defaultValue="none">
                       Who shot first?
                     </option>
                     <option>Han Solo</option>
@@ -191,7 +191,7 @@ const PartnerForm = () => {
                     Last name
                   </label>
                   <select className="select select-bordered w-full max-w-xs">
-                    <option disabled selected>
+                    <option disabled defaultValue="none">
                       Who shot first?
                     </option>
                     <option>Han Solo</option>
