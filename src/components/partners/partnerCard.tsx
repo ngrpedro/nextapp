@@ -2,27 +2,24 @@ import { Star, User } from "phosphor-react";
 import React, { useEffect, useState } from "react";
 import { IPartner } from "../../utils/interfaces";
 import Link from "next/link";
+import useSWR from "swr";
 
 const PartnerCard = () => {
-  const [partners, setPartners] = useState<IPartner[]>();
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-  useEffect(() => {
-    const res = fetch("/api/partners")
-      .then((res) => res.json())
-      .then((data) => setPartners(data));
-  }, []);
+  const { data, error } = useSWR<IPartner[]>(() => "/api/partners", fetcher);
 
-  if (partners === undefined) {
+  if (error) return <div>{error.message}</div>;
+  if (!data)
     return (
       <div className="flex items-center justify-center w-full sm:col-span-2 md:col-span-3">
         <progress className="progress progress-info w-56"></progress>
       </div>
     );
-  }
 
   return (
     <>
-      {partners?.map((item) => (
+      {data?.map((item) => (
         <div key={item._id} className="card bg-base-100 border border-gray-200">
           <div className="bg-gray-400 w-full h-[180px] rounded-t-2xl"></div>
           <div className="card-body">

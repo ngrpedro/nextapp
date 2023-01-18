@@ -3,8 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import {
-  CaretRight,
-  HouseSimple,
   User,
   Plus,
   InstagramLogo,
@@ -17,10 +15,6 @@ import { IPartner } from "../../utils/interfaces";
 import useSWR from "swr";
 
 const Profile = () => {
-  const [partner, setPartner] = useState<IPartner | undefined>();
-  const newTags = partner?.tags.split(",");
-  console.log(newTags);
-
   const fetcher = async (url: string) => {
     const res = await fetch(url);
     const data = await res.json();
@@ -28,18 +22,18 @@ const Profile = () => {
     if (res.status !== 200) {
       throw new Error(data.message);
     }
-    return setPartner(data);
+    return data;
   };
 
   const { query } = useRouter();
-  const { data, error } = useSWR(
+  const { data, error } = useSWR<IPartner>(
     () => query.id && `/api/partners/${query.id}`,
     fetcher
   );
-  console.log(query.id);
+  const newTags = data?.tags.split(",");
 
   if (error) return <div>{error.message}</div>;
-  if (!partner)
+  if (!data)
     return (
       <div className="w-full h-screen flex items-center justify-center">
         <progress className="progress progress-info w-56"></progress>
@@ -63,7 +57,7 @@ const Profile = () => {
               <Link href="/partners">Parceiros</Link>
             </li>
             <li className="capitalize">
-              {partner?.name} - {partner?.reception}
+              {data?.name} - {data?.reception}
             </li>
           </ul>
         </div>
@@ -92,10 +86,10 @@ const Profile = () => {
               {/* About */}
               <div className="flex flex-col gap-6 items-center text-center sm:items-start sm:text-start">
                 <div className="flex flex-col gap-2">
-                  <h1 className="text-2xl font-bold">{partner?.name}</h1>
+                  <h1 className="text-2xl font-bold">{data?.name}</h1>
                   <div>
                     <p className="text-gray-900 text-sm font-medium font-ibm">
-                      {partner?.city}
+                      {data?.city}
                     </p>
                     <p className="text-gray-900 text-sm font-medium  font-ibm">
                       Psicologo especialista não sei no que.
