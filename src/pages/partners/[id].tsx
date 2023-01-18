@@ -18,6 +18,8 @@ import useSWR from "swr";
 
 const Profile = () => {
   const [partner, setPartner] = useState<IPartner | undefined>();
+  const newTags = partner?.tags.split(",");
+  console.log(newTags);
 
   const fetcher = async (url: string) => {
     const res = await fetch(url);
@@ -101,14 +103,14 @@ const Profile = () => {
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-start gap-2">
-                  {/* {tags?.map((item, index) => (
-                  <span
-                    key={index}
-                    className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded"
-                  >
-                    {item}
-                  </span>
-                ))} */}
+                  {newTags?.map((item, index) => (
+                    <span
+                      key={index}
+                      className="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
 
                 <div className="flex items-center justify-start gap-2">
