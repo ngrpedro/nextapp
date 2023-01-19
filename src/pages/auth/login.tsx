@@ -1,7 +1,17 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import Head from "next/head";
+import { GetServerSideProps } from "next";
+import { getSession, signIn } from "next-auth/react";
 
 const login = () => {
+
+  const onSubmit = (e: FormEvent) => {
+  /*   
+    e.preventDefault();
+    signIn("credentials");
+    */
+};
+
   return (
     <>
       <Head>
@@ -21,7 +31,7 @@ const login = () => {
                             Se conecte com a gente
                           </h1>
                         </div>
-                        <form>
+                        <form onSubmit={onSubmit}>
                           <div className="mb-4">
                             <input
                               type="text"
@@ -55,7 +65,7 @@ const login = () => {
                           <div className="flex items-center justify-between pb-6">
                             <p className="mb-0 mr-2">Don't have an account?</p>
                             <button
-                              type="button"
+                              type="submit"
                               className="inline-block px-6 py-2 border-2 border-blue-600 text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                               data-mdb-ripple="true"
                               data-mdb-ripple-color="light"
@@ -76,5 +86,25 @@ const login = () => {
     </>
   );
 };
+
+/* export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  if (context) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      session,
+    },
+  };
+}; 
+*/
 
 export default login;
