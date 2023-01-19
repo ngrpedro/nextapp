@@ -3,9 +3,12 @@ import Head from "next/head";
 import Link from "next/link";
 import PartnerForm from "../../../components/partners/partnerForm";
 
+import Layout from "../../../components/layouts/layout";
+
+
 const form = () => {
   return (
-    <>
+    <Layout>
       <Head>
         <title>Novo Parceiro</title>
       </Head>
@@ -105,7 +108,7 @@ const form = () => {
           </div>
         </div>
       </section>
-    </>
+      </Layout>
   );
 };
 

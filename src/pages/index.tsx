@@ -6,6 +6,8 @@ import pride1 from "../public/heroimage1.png";
 import pride2 from "../public/heroimage2.jpg";
 import pride from "../public/love.gif";
 import Image from "next/image";
+import Layout from "../components/layouts/layout";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +17,8 @@ const Home = () => {
       <Head>
         <title>Home</title>
       </Head>
+    <Layout>
+
       <main>
         <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center lg:-mt-10">
           <div
@@ -120,6 +124,8 @@ const Home = () => {
           </div>
         </section>
       </main>
+    </Layout>
+
     </>
   );
 };

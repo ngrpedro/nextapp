@@ -3,9 +3,12 @@ import Link from "next/link";
 import React from "react";
 import Hero from "../../components/partners/PartnerHero";
 import PartnerView from "../../components/partners/partnerView";
+import Layout from "../../components/layouts/layout";
+
 
 const index = () => {
   return (
+      <Layout>
     <div className="text-gray-800 overflow-hidden">
       <Head>
         <title>Parceiros</title>
@@ -23,6 +26,8 @@ const index = () => {
         <PartnerView />
       </div>
     </div>
+    </Layout>
+
   );
 };
 

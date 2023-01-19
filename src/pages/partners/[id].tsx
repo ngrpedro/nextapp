@@ -14,6 +14,10 @@ import image from "../../public/img1.jpg";
 import { IPartner } from "../../utils/interfaces";
 import useSWR from "swr";
 
+import Layout from "../../components/layouts/layout";
+
+
+
 const Profile = () => {
   const fetcher = async (url: string) => {
     const res = await fetch(url);
@@ -41,6 +45,7 @@ const Profile = () => {
     );
 
   return (
+    <Layout>
     <div>
       <Head>
         <title>Parceiro</title>
@@ -163,6 +168,8 @@ const Profile = () => {
         </section>
       </main>
     </div>
+    </Layout>
+
   );
 };
 
