@@ -45,6 +45,7 @@ const login = () => {
                   className="input input-bordered w-full max-w-xs"
                 />
               </div>
+              <div>{session && session.user?.name}</div>
               <div className="text-center pt-1 mb-12 pb-1">
                 <button
                   className="btn w-full normal-case text-lg font-normal bg-blue-600 border-none hover:bg-blue-500"
@@ -79,9 +80,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      session
-    }
-  }
+      session,
+    },
+  };
 };
 
 export default login;
