@@ -1,6 +1,7 @@
 import React, { FormEvent } from "react";
 import Head from "next/head";
-import { signIn, useSession, signOut } from "next-auth/react";
+import { signIn, useSession, signOut, getSession } from "next-auth/react";
+import { GetServerSideProps } from "next";
 
 const login = () => {
   const { data: session } = useSession();
@@ -45,30 +46,13 @@ const login = () => {
                 />
               </div>
               <div className="text-center pt-1 mb-12 pb-1">
-                {session ? (
-                  <div>
-                    <h1>Bem vindo</h1>
-                    <p>{session?.user?.email}</p>
-                    <br />
-                    <button
-                      className="btn w-full normal-case text-lg font-normal bg-blue-600 border-none hover:bg-blue-500"
-                      type="button"
-                      onClick={() => signOut()}
-                    >
-                      Sair
-                    </button>
-                  </div>
-                ) : (
-                  <div>
-                    <button
-                      className="btn w-full normal-case text-lg font-normal bg-blue-600 border-none hover:bg-blue-500"
-                      type="button"
-                      onClick={() => signIn()}
-                    >
-                      Entrar
-                    </button>
-                  </div>
-                )}
+                <button
+                  className="btn w-full normal-case text-lg font-normal bg-blue-600 border-none hover:bg-blue-500"
+                  type="button"
+                  onClick={() => signIn()}
+                >
+                  Entrar
+                </button>
               </div>
             </form>
           </div>
@@ -78,5 +62,26 @@ const login = () => {
   );
 };
 
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  if (session) {
+    return {
+      props: {
+        session,
+      },
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      session
+    }
+  }
+};
 
 export default login;
