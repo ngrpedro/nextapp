@@ -1,6 +1,7 @@
 import React, { FormEvent } from "react";
 import Head from "next/head";
 import { signIn, useSession } from "next-auth/react";
+import { GoogleLogo } from "phosphor-react";
 
 const login = () => {
   const { data: session } = useSession();
@@ -20,38 +21,14 @@ const login = () => {
               </h1>
             </div>
             <form className="space-y-4">
-              <div className="space-y-2">
-                <label
-                  htmlFor="first-name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Nome
-                </label>
-                <input
-                  type="text"
-                  className="input input-bordered w-full max-w-xs"
-                />
-              </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Senha
-                </label>
-                <input
-                  type="text"
-                  className="input input-bordered w-full max-w-xs"
-                />
-              </div>
               <div>{session && session.user?.name}</div>
               <div className="text-center pt-1 mb-12 pb-1">
                 <button
-                  className="btn w-full normal-case text-lg font-normal bg-blue-600 border-none hover:bg-blue-500"
+                  className="btn w-full normal-case text-lg font-normal bg-blue-600 border-none hover:bg-blue-500 spax"
                   type="button"
                   onClick={() => signIn("google", { callbackUrl: "/" })}
                 >
-                  Entrar
+                  Logar com o Google
                 </button>
               </div>
             </form>
