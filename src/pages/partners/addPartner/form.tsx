@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import PartnerForm from "../../../components/partners/partnerForm";
-
 import Layout from "../../../components/layouts/layout";
-
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
 
 const form = () => {
   return (
@@ -108,8 +108,23 @@ const form = () => {
           </div>
         </div>
       </section>
-      </Layout>
+    </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth/login",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: session,
+  };
 };
 
 export default form;
