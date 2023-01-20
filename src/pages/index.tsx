@@ -22,7 +22,7 @@ const Home = () => {
         <main>
           {session && (
             <h1 className="text-sm font-semibold text-slate-700">
-              Bem vindo, {session?.user?.name}
+              Bem vindo teste, {session?.user?.name}
             </h1>
           )}
           <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center lg:-mt-10">
