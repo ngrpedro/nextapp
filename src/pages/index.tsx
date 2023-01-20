@@ -1,19 +1,17 @@
 import { Inter } from "@next/font/google";
 import Head from "next/head";
 import Link from "next/link";
-import { User } from "../utils/interfaces";
-import pride1 from "../public/heroimage1.png";
-import pride2 from "../public/heroimage2.jpg";
 import pride from "../public/love.gif";
 import Image from "next/image";
 import Layout from "../components/layouts/layout";
-import { useSession, signIn, signOut } from "next-auth/react";
-
-const inter = Inter({ subsets: ["latin"] });
-
+import { useSession } from "next-auth/react";
 
 const Home = () => {
   const { data: session } = useSession();
+
+  if (session) {
+    const firstName = session.user?.name?.split(" ");
+  }
 
   return (
     <>
@@ -22,11 +20,11 @@ const Home = () => {
       </Head>
       <Layout>
         <main>
-         {/*  {session ? (
-            <button onClick={() => signIn()}>sair</button>
-          ) : (
-            <button onClick={() => signOut()}>entrar</button>
-          )} */}
+          {session && (
+            <h1 className="text-sm font-semibold text-slate-700">
+              Bem vindo, {session?.user?.name}
+            </h1>
+          )}
           <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center lg:-mt-10">
             <div
               className="flex flex-col items-center justify-center text-center lg:text-left lg:items-start 
