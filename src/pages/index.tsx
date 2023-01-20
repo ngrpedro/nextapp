@@ -22,11 +22,11 @@ const Home = () => {
       </Head>
       <Layout>
         <main>
-          {session ? (
+         {/*  {session ? (
             <button onClick={() => signIn()}>sair</button>
           ) : (
             <button onClick={() => signOut()}>entrar</button>
-          )}
+          )} */}
           <section className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center lg:-mt-10">
             <div
               className="flex flex-col items-center justify-center text-center lg:text-left lg:items-start 
