@@ -1,10 +1,24 @@
 import React, { FormEvent } from "react";
 import Head from "next/head";
 import { signIn, useSession } from "next-auth/react";
-import { GoogleLogo } from "phosphor-react";
+import { FormControl, FormLabel, Input, Button, Stack } from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
+import { SubmitHandler } from "react-hook-form/dist/types";
+
+type Inputs = {
+  email: string;
+  password: string;
+};
 
 const login = () => {
   const { data: session } = useSession();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
     <>
@@ -20,17 +34,29 @@ const login = () => {
                 Se conecte com a gente
               </h1>
             </div>
-            <form className="space-y-4">
-              <div>{session && session.user?.name}</div>
-              <div className="text-center pt-1 mb-12 pb-1">
-                <button
-                  className="btn w-full normal-case text-lg font-normal bg-blue-600 border-none hover:bg-blue-500 spax"
-                  type="button"
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <FormControl>
+                <FormLabel>Email</FormLabel>
+                <Input {...register("email", { required: true })} />
+              </FormControl>
+              <FormControl>
+                <FormLabel>Senha</FormLabel>
+                <Input
+                  {...register("password", { required: true })}
+                  type="password"
+                />
+              </FormControl>
+              <Stack>
+                <Button className="w-full" type="submit">
+                  Entrar com email e senha
+                </Button>
+                <Button
+                  className="w-full"
                   onClick={() => signIn("google", { callbackUrl: "/" })}
                 >
-                  Logar com o Google
-                </button>
-              </div>
+                  Entrar com Google
+                </Button>
+              </Stack>
             </form>
           </div>
         </section>
