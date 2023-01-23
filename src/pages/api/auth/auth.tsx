@@ -12,7 +12,7 @@ export default async function handlerUsers(
 
     switch (method) {
       case "GET":
-        const data = await db.collection("users").findOne({ name: body.name });
+        const data = await db.collection("users").findOne({ email: body.email });
 
         if (!data) {
           res.status(404).json("Partner not found");
