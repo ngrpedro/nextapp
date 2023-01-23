@@ -13,18 +13,17 @@ export default async function handlerUsers(
     switch (method) {
       case "GET":
         const data = await db.collection("users").findOne({ name: body.name });
-        let id = data?._id;
-        let newId = id?.toString();
 
         if (!data) {
           res.status(404).json("Partner not found");
         }
 
+        let id = data?._id;
+        let newId = id?.toString();
+
         const token = jwt.sign({ newId }, "mysecret", {
           expiresIn: 300, // expires in 5min
         });
-
-        console.log(token);
 
         res.status(200).json({ data, token });
 
